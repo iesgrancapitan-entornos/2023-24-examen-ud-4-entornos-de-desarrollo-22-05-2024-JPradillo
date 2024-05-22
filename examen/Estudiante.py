@@ -8,14 +8,25 @@ Extrae una superclase con los campos
 	nif
 """
 
+class Persona:
+    def __init__(self, nif=None, nombre=None, apellidos=None):
+        self.__nif = nif
+        self.__nombre = nombre
+        self.__apellidos = apellidos
+
+    @property
+    def apellidos(self):
+        return self.__apellidos
+
+    @apellidos.setter
+    def apellidos(self, value):
+        self.__apellidos = value
+
 class Estudiante:
     nif = "11111111Z";
     curso = "Primaria";
     nombre = "Nombre";
     apellidos = "Apellidos";
-
-    def __init__(self):
-        pass;
 
     def __init__(self, nif, curso, nombre, apellidos):
         self.nif = nif;
@@ -46,12 +57,4 @@ class Estudiante:
     @nombre.setter
     def nombre(self, value: int):
         self.__nombre = value
-
-    @property
-    def apellidos(self):
-        return self.__apellidos
-
-    @apellidos.setter
-    def apellidos(self, value):
-        self.__apellidos = value
 
